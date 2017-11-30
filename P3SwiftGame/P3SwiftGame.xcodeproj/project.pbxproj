@@ -10,6 +10,7 @@
 		960F5DAD1FD0B11800D3A527 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F5DAC1FD0B11800D3A527 /* main.swift */; };
 		960F5DB41FD0B13200D3A527 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F5DB31FD0B13200D3A527 /* Player.swift */; };
 		960F5DB61FD0B3A600D3A527 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F5DB51FD0B3A600D3A527 /* Game.swift */; };
+		960F5DB91FD0B51600D3A527 /* Weapons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F5DB81FD0B51600D3A527 /* Weapons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		960F5DAC1FD0B11800D3A527 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		960F5DB31FD0B13200D3A527 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		960F5DB51FD0B3A600D3A527 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		960F5DB81FD0B51600D3A527 /* Weapons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +66,17 @@
 				960F5DAC1FD0B11800D3A527 /* main.swift */,
 				960F5DB31FD0B13200D3A527 /* Player.swift */,
 				960F5DB51FD0B3A600D3A527 /* Game.swift */,
+				960F5DB71FD0B4E600D3A527 /* Weapons */,
 			);
 			path = P3SwiftGame;
+			sourceTree = "<group>";
+		};
+		960F5DB71FD0B4E600D3A527 /* Weapons */ = {
+			isa = PBXGroup;
+			children = (
+				960F5DB81FD0B51600D3A527 /* Weapons.swift */,
+			);
+			name = Weapons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				960F5DB41FD0B13200D3A527 /* Player.swift in Sources */,
+				960F5DB91FD0B51600D3A527 /* Weapons.swift in Sources */,
 				960F5DB61FD0B3A600D3A527 /* Game.swift in Sources */,
 				960F5DAD1FD0B11800D3A527 /* main.swift in Sources */,
 			);

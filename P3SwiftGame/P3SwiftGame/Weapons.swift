@@ -1,5 +1,5 @@
 //
-//  Game.swift
+//  Weapons.swift
 //  P3SwiftGame
 //
 //  Created by Pro on 30/11/2017.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Enter the Game
-class Game {
+// weapon for character
+class Weapon {
     
-} // end Game
+} // end Weapon

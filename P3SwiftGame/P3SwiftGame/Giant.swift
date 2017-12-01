@@ -12,7 +12,7 @@ import Foundation
 class Giant: Character {
     
     init(name: String){
-        super.init(name: name, weapon: HandFight(), maxlife: 100)
+        super.init(typeclass: "Giant",name: name, weapon: HandFight(), maxlife: 100)
     }
     
     /*

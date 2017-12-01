@@ -12,7 +12,7 @@ import Foundation
 class Magus: Character {
     
     init(name: String){
-        super.init(name: name, weapon: MagicWand(), maxlife: 90)
+        super.init(typeclass: "Magus", name: name, weapon: MagicWand(), maxlife: 90)
         self.life = 90
         
     }

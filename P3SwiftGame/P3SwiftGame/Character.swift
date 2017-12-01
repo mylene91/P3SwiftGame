@@ -10,13 +10,15 @@ import Foundation
 
 // character equipped functions: presentation, attack, heal
 class Character {
+    var typeClass: String
     var name: String
     var life: Int = 100
     let maxLife: Int
     var weapon: Weapon
     
     
-    init(name: String, weapon: Weapon, maxlife: Int) {
+    init(typeclass: String, name: String, weapon: Weapon, maxlife: Int) {
+        self.typeClass = typeclass
         self.name = name
         self.weapon = weapon
         self.maxLife = maxlife
@@ -37,7 +39,7 @@ class Character {
     
     
     func presentation() {
-        print("Name: \(name) - Life: [\(life)/\(maxLife)] -  Weapon: \(weapon.name).")
+        print("Name: \(name)(\(typeClass)) - Life: [\(life)/\(maxLife)] -  Weapon: \(weapon.name).")
     }
 
     

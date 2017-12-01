@@ -84,7 +84,7 @@
 				960F5DAC1FD0B11800D3A527 /* main.swift */,
 				960F5DB31FD0B13200D3A527 /* Player.swift */,
 				960F5DB51FD0B3A600D3A527 /* Game.swift */,
-				960F5DC51FD17D7F00D3A527 /* Characters */,
+				960F5DD21FD183E900D3A527 /* Characters */,
 				960F5DB71FD0B4E600D3A527 /* Weapons */,
 			);
 			path = P3SwiftGame;
@@ -102,7 +102,7 @@
 			name = Weapons;
 			sourceTree = "<group>";
 		};
-		960F5DC51FD17D7F00D3A527 /* Characters */ = {
+		960F5DD21FD183E900D3A527 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
 				960F5DC61FD17DAF00D3A527 /* Character.swift */,
@@ -112,7 +112,6 @@
 				960F5DCE1FD1813300D3A527 /* Dwarf.swift */,
 			);
 			name = Characters;
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

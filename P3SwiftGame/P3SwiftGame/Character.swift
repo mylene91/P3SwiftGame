@@ -16,22 +16,29 @@ class Character {
     var weapon: Weapon
     
     
-    init(name: String, weapon: Weapon, maxLife: Int) {
+    init(name: String, weapon: Weapon, maxlife: Int) {
         self.name = name
         self.weapon = weapon
         self.maxLife = maxlife
     }
     
+    func attack(target: Character) {
+        let damage = weapon.damage
+        target.life -= damage
+        
+        if target.life < 0 {
+            target.life = 0
+            // print(target.life) test OK
+        }
+        
+        print("\(target.name) has lose \(weapon.damage) points of life: [\(target.life)/\(target.maxLife)]")
+    } // end attack()
+    
     
     func presentation() {
-        print("Name: \(name), Life: [\(life)/\(maxLife)], Weapon: (),")
+        print("Name: \(name) - Life: [\(life)/\(maxLife)] -  Weapon: \(weapon.name).")
     }
-    
-    
-    func attack(target: Character) {
-        print("You Loose!")
-    }
-    
+
     
     
     

@@ -11,5 +11,13 @@ import Foundation
 
 // create player (totality: 2)
 class Player {
+    // 1. Player creates team with three characters
+    var teamCharacters = [Character]()
+    
+    
+    func createTeamCharacters() {
+        
+        
+    } // end createTeamCharacters()
     
 } // end Player

@@ -28,6 +28,7 @@ class Character {
         
         if target.life < 0 {
             target.life = 0
+            // idea: remove.target.team if target.life = 0
             // print(target.life) test OK
         }
         

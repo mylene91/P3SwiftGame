@@ -15,6 +15,11 @@
 		960F5DBD1FD17BC400D3A527 /* MagicWand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F5DBC1FD17BC400D3A527 /* MagicWand.swift */; };
 		960F5DBF1FD17C0F00D3A527 /* HandFight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F5DBE1FD17C0F00D3A527 /* HandFight.swift */; };
 		960F5DC31FD17C7700D3A527 /* Axe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F5DC21FD17C7700D3A527 /* Axe.swift */; };
+		960F5DC71FD17DAF00D3A527 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F5DC61FD17DAF00D3A527 /* Character.swift */; };
+		960F5DC91FD17E4D00D3A527 /* Fighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F5DC81FD17E4D00D3A527 /* Fighter.swift */; };
+		960F5DCB1FD17EDF00D3A527 /* Magus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F5DCA1FD17EDF00D3A527 /* Magus.swift */; };
+		960F5DCD1FD17FF300D3A527 /* Giant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F5DCC1FD17FF300D3A527 /* Giant.swift */; };
+		960F5DCF1FD1813300D3A527 /* Dwarf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960F5DCE1FD1813300D3A527 /* Dwarf.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +44,11 @@
 		960F5DBC1FD17BC400D3A527 /* MagicWand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicWand.swift; sourceTree = "<group>"; };
 		960F5DBE1FD17C0F00D3A527 /* HandFight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandFight.swift; sourceTree = "<group>"; };
 		960F5DC21FD17C7700D3A527 /* Axe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axe.swift; sourceTree = "<group>"; };
+		960F5DC61FD17DAF00D3A527 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		960F5DC81FD17E4D00D3A527 /* Fighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fighter.swift; sourceTree = "<group>"; };
+		960F5DCA1FD17EDF00D3A527 /* Magus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magus.swift; sourceTree = "<group>"; };
+		960F5DCC1FD17FF300D3A527 /* Giant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Giant.swift; sourceTree = "<group>"; };
+		960F5DCE1FD1813300D3A527 /* Dwarf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dwarf.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,7 @@
 				960F5DAC1FD0B11800D3A527 /* main.swift */,
 				960F5DB31FD0B13200D3A527 /* Player.swift */,
 				960F5DB51FD0B3A600D3A527 /* Game.swift */,
+				960F5DC51FD17D7F00D3A527 /* Characters */,
 				960F5DB71FD0B4E600D3A527 /* Weapons */,
 			);
 			path = P3SwiftGame;
@@ -89,6 +100,19 @@
 				960F5DC21FD17C7700D3A527 /* Axe.swift */,
 			);
 			name = Weapons;
+			sourceTree = "<group>";
+		};
+		960F5DC51FD17D7F00D3A527 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				960F5DC61FD17DAF00D3A527 /* Character.swift */,
+				960F5DC81FD17E4D00D3A527 /* Fighter.swift */,
+				960F5DCA1FD17EDF00D3A527 /* Magus.swift */,
+				960F5DCC1FD17FF300D3A527 /* Giant.swift */,
+				960F5DCE1FD1813300D3A527 /* Dwarf.swift */,
+			);
+			name = Characters;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,9 +173,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				960F5DC71FD17DAF00D3A527 /* Character.swift in Sources */,
+				960F5DCD1FD17FF300D3A527 /* Giant.swift in Sources */,
+				960F5DC91FD17E4D00D3A527 /* Fighter.swift in Sources */,
 				960F5DBB1FD17B8A00D3A527 /* Sword.swift in Sources */,
 				960F5DBD1FD17BC400D3A527 /* MagicWand.swift in Sources */,
 				960F5DC31FD17C7700D3A527 /* Axe.swift in Sources */,
+				960F5DCB1FD17EDF00D3A527 /* Magus.swift in Sources */,
+				960F5DCF1FD1813300D3A527 /* Dwarf.swift in Sources */,
 				960F5DB41FD0B13200D3A527 /* Player.swift in Sources */,
 				960F5DBF1FD17C0F00D3A527 /* HandFight.swift in Sources */,
 				960F5DB91FD0B51600D3A527 /* Weapons.swift in Sources */,

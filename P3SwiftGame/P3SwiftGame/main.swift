@@ -9,7 +9,9 @@
 import Foundation
 
 var play = Game()
+play.initGame()
 
+/*
 // create six characters
 var unGeant = Giant(name: "GEAAANT")
 var unNain = Dwarf(name: "NAIN")
@@ -36,7 +38,8 @@ for characterLoosers in teamDeLoosers1 {
 for characterLoosers in teamDeLoosers2 {
     characterLoosers.presentation()
 }
-
+/*
+ 
 
 
 /*
@@ -50,4 +53,4 @@ unMage.heal(target: unGeant)
 unMage.heal(target: unGeant)
 */
 
-
+ */*/

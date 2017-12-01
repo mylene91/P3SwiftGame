@@ -21,12 +21,14 @@ class Magus: Character {
         //let healTeam: Int = randomHeal()
         let healTeam = 120
         target.life += healTeam
-        print("\(name) healing \(target.name) for +\(healTeam) pts. NOW : life [\(target.life)/\(target.maxLife)].")
-  
+        
         if target.life > target.maxLife {
             target.life = target.maxLife
-            print(target.life)
-        } // end if
+            // print(target.life) verif ok
+        }
+        print("\(name) healing \(target.name) for +\(healTeam) pts. NOW : life [\(target.life)/\(target.maxLife)].")
+  
+       
         
     } // end heal()
     

@@ -11,4 +11,14 @@ import Foundation
 // Giant (hand-to-hand fighting)
 class Giant: Character {
     
+    init(name: String){
+        super.init(name: name, weapon: HandFight(), maxlife: 100)
+    }
+    
+    override func attack(target: Character) {
+        let attackHandToHand = HandFight()
+        target.life -= attackHandToHand.damage
+        print("\(target.name) has lose \(attackHandToHand.damage) points of life: [\(target.life)/\(target.maxLife)]")
+    } // end attack()
+    
 } // end Giant

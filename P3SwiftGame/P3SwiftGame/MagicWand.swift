@@ -11,4 +11,8 @@ import Foundation
 // Magic Wand for Magus, no damage
 class MagicWand: Weapon {
     
+    init() {
+        super.init(name: "Magic Wand", damage: 0)
+    }
+    
 } // end MagicWand

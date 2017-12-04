@@ -16,23 +16,21 @@ class Magus: Character {
         self.life = 90
     }
     
-    //override func attack(target: Character) {
-    //    print("Magus cannot attack")
-    //}
-    
-    func heal(_ target: Character) {
-        let healTeam: Int = randomHeal()
-        //let healTeam = 120
+    // override la func attaque principale pour être sûr que le mage ne puisse attaquer et uniquement soigner
+    override func attack(_ target: Character) {
+        //let healTeam: Int = randomHeal()
+        let healTeam = 120
         target.life += healTeam
         
+        // si la vie du personnage ciblé est supérieur à sa vie maximale alors le heal ne dépasse pas cette dernière valeur
         if target.life > target.maxLife {
             target.life = target.maxLife
             // print(target.life) verif ok
         }
         print("\(name) heals \(target.name) for +\(healTeam) lifepoints. NOW : life [\(target.life)/\(target.maxLife)].")
-  
-       
-        
+
+
+
     } // end heal()
     
     // use later

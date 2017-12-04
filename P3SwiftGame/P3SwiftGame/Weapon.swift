@@ -8,7 +8,7 @@
 
 import Foundation
 
-// weapon for character
+// Character's weapons
 class Weapon {
     var name: String
     var damage: Int

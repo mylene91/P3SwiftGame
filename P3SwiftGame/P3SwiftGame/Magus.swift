@@ -8,25 +8,28 @@
 
 import Foundation
 
-// Magus is eqquiped with magic wand - No damage, healing power
+// Magus owns a magic wand - No damage, healing power
 class Magus: Character {
     
     init(name: String){
         super.init(typeclass: "Magus", name: name, weapon: MagicWand(), maxlife: 90)
         self.life = 90
-        
     }
     
-    func heal(target: Character) {
-        //let healTeam: Int = randomHeal()
-        let healTeam = 120
+    //override func attack(target: Character) {
+    //    print("Magus cannot attack")
+    //}
+    
+    func heal(_ target: Character) {
+        let healTeam: Int = randomHeal()
+        //let healTeam = 120
         target.life += healTeam
         
         if target.life > target.maxLife {
             target.life = target.maxLife
             // print(target.life) verif ok
         }
-        print("\(name) healing \(target.name) for +\(healTeam) pts. NOW : life [\(target.life)/\(target.maxLife)].")
+        print("\(name) heals \(target.name) for +\(healTeam) lifepoints. NOW : life [\(target.life)/\(target.maxLife)].")
   
        
         

@@ -20,7 +20,7 @@ class Dwarf: Character {
     override func attack(target: Character) {
         let axe = Axe()
         target.life -= axe.damage
-        print("\(target.name) has lose \(axe.damage) points of life: [\(target.life)/\(target.maxLife)]")
+     print("\(target.name) lost \(axe.damage) lifepoints: [\(target.life)/\(target.maxLife)]")
     } // end attack()
     */
     

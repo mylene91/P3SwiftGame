@@ -19,7 +19,7 @@ class Giant: Character {
     override func attack(target: Character) {
         let attackHandToHand = HandFight()
         target.life -= attackHandToHand.damage
-        print("\(target.name) has lose \(attackHandToHand.damage) points of life: [\(target.life)/\(target.maxLife)]")
+        print("\(target.name) lost \(attackHandToHand.damage) lifepoints: [\(target.life)/\(target.maxLife)]")
     } // end attack()
     */
     

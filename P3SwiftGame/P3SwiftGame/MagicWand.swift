@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Magic Wand for Magus, no damage
+// Magic Wand for Magus, no damages
 class MagicWand: Weapon {
     
     init() {

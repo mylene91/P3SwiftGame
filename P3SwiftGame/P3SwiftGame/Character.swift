@@ -8,7 +8,7 @@
 
 import Foundation
 
-// character equipped functions: presentation, attack, heal
+// character's main functions: presentation, attack, heal
 class Character {
     var typeClass: String
     var name: String
@@ -16,6 +16,9 @@ class Character {
     let maxLife: Int
     var weapon: Weapon
     
+    convenience init() {
+        self.init(typeclass: "",name: "", weapon: Axe(), maxlife: 0)
+    }
     
     init(typeclass: String, name: String, weapon: Weapon, maxlife: Int) {
         self.typeClass = typeclass
@@ -30,16 +33,18 @@ class Character {
         
         if target.life < 0 {
             target.life = 0
+            print("\(target.name) is dead.")
+            }
             // idea: remove.target.team if target.life = 0
             // print(target.life) test OK
-        }
+        
         
         print("\(target.name) has lose \(weapon.damage) points of life: [\(target.life)/\(target.maxLife)]")
     } // end attack()
     
     
     func presentation() {
-        print("Name: \(name)(\(typeClass)) - Life: [\(life)/\(maxLife)] -  Weapon: \(weapon.name).")
+        print("Name: \(name)(\(self.typeClass)) - Life: [\(life)/\(maxLife)] -  Weapon: \(weapon.name).")
     }
 
     

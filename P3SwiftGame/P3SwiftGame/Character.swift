@@ -15,10 +15,7 @@ class Character {
     var life: Int = 100
     let maxLife: Int
     var weapon: Weapon
-    
-    convenience init() {
-        self.init(typeclass: "",name: "", weapon: Axe(), maxlife: 0)
-    }
+
     
     init(typeclass: String, name: String, weapon: Weapon, maxlife: Int) {
         self.typeClass = typeclass
@@ -27,28 +24,17 @@ class Character {
         self.maxLife = maxlife
     }
     
-    func attack(target: Character) {
+    func attack(_ target: Character) {
         let damage = weapon.damage
         target.life -= damage
-        
-        if target.life < 0 {
-            target.life = 0
-            print("\(target.name) is dead.")
-            }
-            // idea: remove.target.team if target.life = 0
-            // print(target.life) test OK
-        
-        
-        print("\(target.name) has lose \(weapon.damage) points of life: [\(target.life)/\(target.maxLife)]")
-    } // end attack()
     
+        print("\(target.name) has lose \(weapon.damage) points of life: [\(target.life)/\(target.maxLife)]." + "\n")
+    } // end attack()
+
     
     func presentation() {
         print("Name: \(name)(\(self.typeClass)) - Life: [\(life)/\(maxLife)] -  Weapon: \(weapon.name).")
     }
 
-    
-    
-    
-    
 } // end Character
+

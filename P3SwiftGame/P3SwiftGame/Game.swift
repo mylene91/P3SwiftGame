@@ -13,52 +13,56 @@ class Game {
     //on initialise deux joueurs
     var player1: Player
     var player2: Player
+    var turnGame = 1
     
     init() {
-        player1 = Player(nameplayer: "Aristote")
-        player2 = Player(nameplayer: "Morback")
+        player1 = Player(nameplayer: "JULES")
+        player2 = Player(nameplayer: "MAMAN")
     }
     // 1. Team
     func initGame() {
-        print("Welcome to the game!")
+        print("                           👾 Welcome to the game! 👾                 ")
         //le player 1 créer son équipe
-        print("---------------------------Player 1--------------------------------------")
-        print("Create your team Player 1!")
+        print("------------------------- \(player1.namePlayer) ------------------------------------")
+        print("Create your team \(player1.namePlayer):" + "\n")
         player1.createTeamCharacters()
         
         // le joueur 2 créer son équipe
-        print("---------------------------Player 2--------------------------------------")
-        print("Create your team Player 2!")
+        print("--------------------------- \(player2.namePlayer) ----------------------------------")
+        print("Create your team \(player2.namePlayer):" + "\n")
         player2.createTeamCharacters()
         
         print("-------------------------------------------------------------------------")
-        print("Well, here are the teams : ")
+        print("                         Well, here are the teams : ")
         print("-------------------------------------------------------------------------")
         // on affiche l'équipe du joueur 1
                 player1.displayTeam()
         print("-------------------------------------------------------------------------")
         // on affiche l'équipe du joueur 2
                  player2.displayTeam()
-        print("-------------------------------------------------------------------------")
+        print("-------------------------------------------------------------------------" + "\n" + "\n")
     }
     
     
     // 2. Fight
     func fight() {
+        print("                          ⚔️ ⚔️ ⚔️ START A GAME!!! ⚔️ ⚔️ ⚔️                          " + "\n")
         // tant que l'équipe du player 2 n'est pas anéantie on fait jouer le player 1 contre le player 2
          while !player2.team.isEmpty {
-            print("---------------------------\(player1.namePlayer)--------------------------------------")
+            print("---------------------------  \(player1.namePlayer)   turn : \(turnGame)  ----------------------------" + "\n")
+            print("CHOOSE A CHARACTER IN YOUR TEAM TO FIGHT: ")
             // le player 1 choisi avec quel personnage attaquer
             let chooseCharacter = player1.selectCharacter(player: player1)
             var index = 0
-            print(chooseCharacter.name)
+            //print(chooseCharacter.name)
+            print("\n")
             
             // s'il a choisi un character de classe mage alors il doit choisir un personnage de son équipe
                 if chooseCharacter is Magus {
-                        print("Bravo ! C'est un mage")
-                        print("\(player1.namePlayer) select character to heal in your team")
+                        print("             🧙🏻‍♂️🍀 HEAL A CHARACTER IN YOUR TEAM 🍀🧙🏻‍♂️")
+                    print("\(player1.namePlayer) select character to heal in your team:" + "\n")
                         for characters in player1.team {
-                            print("\(characters.name) - \(characters.life)/\(characters.maxLife) select \(index)")
+                            print(          "\(characters.name) - \(characters.life)/\(characters.maxLife) select \(index)")
                             index += 1 // à voir car à l'affichage c'est 0 puis 1 puis 2
                             
                         }
@@ -67,7 +71,8 @@ class Game {
                     
                     // si c'est une autre classe que le mage, alors le personnage va choisir un personnage à attaquer dans l'équipe adverse
                 } else {
-                        print("----------------\(player1.namePlayer) attack \(player2.namePlayer)--------------------")
+                        print("---------------------------  \(player1.namePlayer) VS \(player2.namePlayer)  ----------------------------" + "\n")
+                        print("CHOOSE A CHARACTER IN LA TEAM ADVERSE:")
                         // on affiche l'équipe du player 2
                         player2.displayTeam()
                         // le joueur choisi et selon l'entrée de l'utilisateur on assigne - 1 car l'index du tableau commence toujours à 0
@@ -78,24 +83,40 @@ class Game {
                         chooseCharacter.attack(theTarget)
                     
                         // si le personnage meurt et que sa vie passe en negatif alors sa vie passe à 0
-                        if theTarget.life < 0 {
+                        if theTarget.life <= 0 {
                             theTarget.life = 0
                             // on affiche la team du player 2
                             print(player2.team)
                             // on affiche le nom du joueur qui est mort
-                            print("\(theTarget.name) is dead.")
+                            print("🎚\(theTarget.name) is dead🎚")
                             //on affiche son index
-                            print(index)
+                            //print(index)
                             // .. -1 pour avoir un visu par rapport au tableau qui commence par 0
-                            print(index - 1)
+                            //print(index - 1)
                             // on enlève ce personnage du tableau avec l'index
                             player2.team.remove(at: index)
                             // on affiche l'équipe du joueur 2 sans le personage qui est mort
                             player2.displayTeam()
-                            print(player2.team)
+                            //print(player2.team)
+                            
+                            // si le tableau du joueur 2 est vide alors affiche le winner (opposé) et supprime les deux tableaux pour finir la partie
+                            if player2.team.isEmpty{
+                                let winner = player1.namePlayer
+                                player1.team.removeAll()
+                                player2.team.removeAll()
+                                print("\(winner) has win!")
+                            }
+                         
                         } // end theTarget
-                
+                    
+
+                        turnGame += 1
+                    
                 } // end else
+            //inverser les joueurs pour que la partie se déroule à tour de rôle
+            swap(&player2,&player1)
+            
+            
         } // end while
     } // end fight()
 } // end Game()

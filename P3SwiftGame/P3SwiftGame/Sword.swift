@@ -12,7 +12,7 @@ import Foundation
 class Sword: Weapon {
     
     init() {
-        super.init(name: "Sword", damage: 150)//attackDamageRandom()) huge damages to test in Game()
+        super.init(name: "Sword", damage: 90)//attackDamageRandom()) huge damages to test in Game()
     }
     
     // Random damage between 10 and 15

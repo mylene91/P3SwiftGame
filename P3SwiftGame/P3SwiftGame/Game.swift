@@ -57,6 +57,14 @@ class Game {
             //print(chooseCharacter.name)
             print("\n")
             
+            /////C'est ici que le coffre apparaît aléatoirement
+            randomGift()
+//            print("Oh ! Voici un Coffre ! 🎁 ")
+//            chooseCharacter.weapon = GiftSurprise()
+//            print("C'est une arme ! \(coffre().name) fait \(coffre().damage)" + "\n")
+            //remplacer l'arme du joueur selectionné par cette nouvelle arme :
+            
+            
             // s'il a choisi un character de classe mage alors il doit choisir un personnage de son équipe
                 if chooseCharacter is Magus {
                         print("             🧙🏻‍♂️🍀 HEAL A CHARACTER IN YOUR TEAM 🍀🧙🏻‍♂️")
@@ -86,7 +94,7 @@ class Game {
                         if theTarget.life <= 0 {
                             theTarget.life = 0
                             // on affiche la team du player 2
-                            print(player2.team)
+                            //print(player2.team)
                             // on affiche le nom du joueur qui est mort
                             print("🎚\(theTarget.name) is dead🎚")
                             //on affiche son index
@@ -99,26 +107,57 @@ class Game {
                             player2.displayTeam()
                             //print(player2.team)
                             
-                            // si le tableau du joueur 2 est vide alors affiche le winner (opposé) et supprime les deux tableaux pour finir la partie
-                            if player2.team.isEmpty{
-                                let winner = player1.namePlayer
-                                player1.team.removeAll()
-                                player2.team.removeAll()
-                                print("\(winner) has win!")
-                            }
+                            ifWinner()
                          
                         } // end theTarget
-                    
-
+     
                         turnGame += 1
                     
                 } // end else
             //inverser les joueurs pour que la partie se déroule à tour de rôle
             swap(&player2,&player1)
-            
-            
+
         } // end while
     } // end fight()
+    
+
+    //verifier si le tableau du joueur 2 est vide + supprimer les deux tableaux + afficher le vainqueur
+    func ifWinner() {
+        if player2.team.isEmpty{
+            let winner = player1.namePlayer
+            player1.team.removeAll()
+            player2.team.removeAll()
+            print("👑\(winner) has win!👑")
+        }
+    } // end if Winner()
+    
+    //pour un cadeau
+    func giftWeapon() {
+        print("Bravo tu as eu un kdo ;)")
+        let nouvelleArme = GiftSurprise()
+        Weapon.init(name: nouvelleArme.name, damage: nouvelleArme.damage)
+    }
+    
+    //random, s'il a un bon n° il a un kdo
+    func randomGift() {
+        let giftOrNotGift = Int(arc4random_uniform(2))
+        print(giftOrNotGift)
+        if giftOrNotGift == 1 {
+            giftWeapon()
+         
+        } else {
+            print("pas de kdo pour cette fois ci ! :( ")
+        }
+    }
+//    func coffre() -> Weapon {
+//        //aleatoire
+//        let newArme = GiftSurprise()
+//        player1.selectCharacter(player: player1).weapon = newArme
+//        return newArme
+//    }
+    
+    
+    
 } // end Game()
 
             

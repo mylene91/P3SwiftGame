@@ -107,14 +107,16 @@ class Player {
     
     // 1. Presentation Team
     func displayTeam() {
+        var i = 1
         for character in team {
-            character.presentation()
+            print("\(i). - \(character.presentation())")
+            i += 1
         }
     } // end displayTeam()
     
     
     // 2. Select a character in order to fight the adverse team
-    func selectCharacter(player: Player) -> Character {
+    func selectCharacter() -> Character {
         // creation d'un container pour stocker le personnage
         var characterToFight = Character(typeclass: "", name: "", weapon: Axe(), maxlife: 0)
         
@@ -126,14 +128,14 @@ class Player {
         switch userChoice {
         case 1:
             // j'assigne le character de l'équipe dans le container
-            characterToFight = player.team[0]
-            print("You have chosen \(player.team[0].name)-\(player.team[0].typeClass) - [\(player.team[0].life)/\(player.team[0].maxLife)]!")
+            characterToFight = team[0]
+            print("You have chosen \(team[0].name)-\(team[0].typeClass) - [\(team[0].life)/\(team[0].maxLife)]!")
         case 2:
-            characterToFight = player.team[1]
-            print("You have chosen \(player.team[1].name) - \(player.team[1].typeClass)- [\(player.team[1].life)/\(player.team[1].maxLife)]!")
+            characterToFight = team[1]
+            print("You have chosen \(team[1].name) - \(team[1].typeClass)- [\(team[1].life)/\(team[1].maxLife)]!")
         case 3:
-            characterToFight = player.team[2]
-            print("You have chosen \(player.team[2].name) - \(player.team[0].typeClass) - [\(player.team[2].life)/\(player.team[2].maxLife)]!")
+            characterToFight = team[2]
+            print("You have chosen \(team[2].name) - \(team[0].typeClass) - [\(team[2].life)/\(team[2].maxLife)]!")
             
         default:
             print("I don't understand, please try again.")

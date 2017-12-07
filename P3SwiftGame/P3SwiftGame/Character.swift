@@ -32,8 +32,19 @@ class Character {
     } // end attack()
 
     
-    func presentation() {
-        print("Name: \(name)(\(self.typeClass)) - Life: [\(life)/\(maxLife)] -  Weapon: \(weapon.name).")
+    func presentation() -> String {
+        return "Name: \(name)(\(self.typeClass)) - Life: [\(life)/\(maxLife)] -  Weapon: \(weapon.name)."
+    }
+    func giftWeapon() {
+        let giftOrNotGift = Int(arc4random_uniform(99))
+        if giftOrNotGift < 33 {
+            print("Oh ! Voici un Coffre ! 🎁 ")
+            self.weapon = GiftSurprise()
+            print("Bravo tu as eu un kdo ;)")
+            print("\(self.name) est maintenant équipé de \(self.weapon.name) qui inflige \(self.weapon.damage)")
+           
+            
+        }
     }
 
 } // end Character

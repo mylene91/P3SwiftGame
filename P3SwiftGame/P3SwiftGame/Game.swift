@@ -126,7 +126,12 @@ class Game {
             let winner = player1.namePlayer
             player1.team.removeAll()
             player2.team.removeAll()
-            print("👑\(winner) has win!👑")
+            print("👑👑👑👑👑👑👑👑👑👑👑")
+            print(" \(winner) has win!")
+            print("👑👑👑👑👑👑👑👑👑👑👑" + "\n")
+            print("Nombre de tours 🏁: \(turnGame)" + "\n")
+            print("                           👾 END 👾                 " + "\n")
+            
         }
     } // end if Winner()
 

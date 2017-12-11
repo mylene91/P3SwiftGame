@@ -11,8 +11,9 @@ import Foundation
 // Giant (hand-to-hand fighting)
 class Giant: Character {
     
+    
     init(name: String){
-        super.init(typeclass: "Giant",name: name, weapon: HandFight(), maxlife: 100)
+        super.init(typeclass: "Giant",name: name, weapon: HandFight(), maxlife: 100, protectheal: false)
     }
     
 } // end Giant

@@ -12,7 +12,7 @@ import Foundation
 class Dwarf: Character {
     
     init(name: String){
-        super.init(typeclass: "Dwarf", name: name, weapon: Axe(), maxlife: 80)
+        super.init(typeclass: "Dwarf", name: name, weapon: Axe(), maxlife: 80, protectheal: false)
         self.life = 80
     }
 

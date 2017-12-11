@@ -95,8 +95,8 @@
 		960F5DB71FD0B4E600D3A527 /* Weapons */ = {
 			isa = PBXGroup;
 			children = (
-				963A4AF71FD848F400C59848 /* GiftSurprise.swift */,
 				960F5DB81FD0B51600D3A527 /* Weapon.swift */,
+				963A4AF71FD848F400C59848 /* GiftSurprise.swift */,
 				960F5DBA1FD17B8A00D3A527 /* Sword.swift */,
 				960F5DBC1FD17BC400D3A527 /* MagicWand.swift */,
 				960F5DBE1FD17C0F00D3A527 /* HandFight.swift */,

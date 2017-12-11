@@ -52,13 +52,13 @@ class Game {
             print("---------------------------  \(player1.namePlayer)   turn : \(turnGame)  ----------------------------" + "\n")
             print("CHOOSE A CHARACTER IN YOUR TEAM TO FIGHT: ")
             // le player 1 choisi avec quel personnage attaquer
-            let chooseCharacter = player1.selectCharacter(player: player1)
+            let chooseCharacter = player1.selectCharacter()
             var index = 0
             //print(chooseCharacter.name)
             print("\n")
             
             /////C'est ici que le coffre apparaît aléatoirement
-            randomGift()
+            chooseCharacter.giftWeapon()
 //            print("Oh ! Voici un Coffre ! 🎁 ")
 //            chooseCharacter.weapon = GiftSurprise()
 //            print("C'est une arme ! \(coffre().name) fait \(coffre().damage)" + "\n")
@@ -68,14 +68,13 @@ class Game {
             // s'il a choisi un character de classe mage alors il doit choisir un personnage de son équipe
                 if chooseCharacter is Magus {
                         print("             🧙🏻‍♂️🍀 HEAL A CHARACTER IN YOUR TEAM 🍀🧙🏻‍♂️")
-                    print("\(player1.namePlayer) select character to heal in your team:" + "\n")
-                        for characters in player1.team {
-                            print(          "\(characters.name) - \(characters.life)/\(characters.maxLife) select \(index)")
-                            index += 1 // à voir car à l'affichage c'est 0 puis 1 puis 2
-                            
-                        }
-                        // le personnage de classe Mage va heal un membre de son équipe selon le choix de l'utilisateur
-                        chooseCharacter.attack(player1.team[Player.answerInt()])
+                        print("\(player1.namePlayer) select character to heal in your team:" + "\n")
+                        let target = player1.selectCharacter()
+                        // le personnage de classe Mage(as!) va heal un membre de son équipe selon le choix de l'utilisateur (target)
+                        let magus = chooseCharacter as! Magus
+                        magus.attack(target)
+                   
+                    
                     
                     // si c'est une autre classe que le mage, alors le personnage va choisir un personnage à attaquer dans l'équipe adverse
                 } else {
@@ -130,34 +129,7 @@ class Game {
             print("👑\(winner) has win!👑")
         }
     } // end if Winner()
-    
-    //pour un cadeau
-    func giftWeapon() {
-        print("Bravo tu as eu un kdo ;)")
-        let nouvelleArme = GiftSurprise()
-        Weapon.init(name: nouvelleArme.name, damage: nouvelleArme.damage)
-    }
-    
-    //random, s'il a un bon n° il a un kdo
-    func randomGift() {
-        let giftOrNotGift = Int(arc4random_uniform(2))
-        print(giftOrNotGift)
-        if giftOrNotGift == 1 {
-            giftWeapon()
-         
-        } else {
-            print("pas de kdo pour cette fois ci ! :( ")
-        }
-    }
-//    func coffre() -> Weapon {
-//        //aleatoire
-//        let newArme = GiftSurprise()
-//        player1.selectCharacter(player: player1).weapon = newArme
-//        return newArme
-//    }
-    
-    
-    
+
 } // end Game()
 
             

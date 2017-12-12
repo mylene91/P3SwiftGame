@@ -13,7 +13,6 @@ class Magus: Character {
     
     init(name: String){
         super.init(typeclass: "Magus", name: name, weapon: MagicWand(), maxlife: 90, protectheal: false)
-        self.life = 90
     }
     
     // override la func attaque principale pour être sûr que le mage ne puisse attaquer et uniquement soigner
@@ -44,10 +43,10 @@ class Magus: Character {
         // 40% de chances d'avoir un coffre
         if giftOrNotGift < 90 {
             print("Oh ! Voici un Coffre ! 🎁 ")
-            print("Le mage a un nouveau sort il pose un bouclier qui absorbe 5 pts de degats en plus de son heal !")
+            print("Le mage a un nouveau sort il pose un bouclier qui absorbe 5 pts de degats en plus de son heal.")
             protectHeal = true
             print(self.protectHeal)
-            print("Ton mage \(self.name) a maintenant un bouclier qui absorbe 5 pts de dégats !")
+            print("Ton mage \(self.name) a maintenant un bouclier qui absorbe 5 pts de dégats !" + "\n")
             
             }
     }

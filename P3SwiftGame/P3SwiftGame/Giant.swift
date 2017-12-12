@@ -14,7 +14,7 @@ class Giant: Character {
     
     
     init(name: String){
-        super.init(typeclass: "Giant",name: name, weapon: HandFight(), maxlife: 100, protectheal: false)
+        super.init(typeclass: "Giant",name: name, weapon: HandFight(), maxlife: 90, protectheal: false)
     }
     
     override func attack(_ target: Character) {

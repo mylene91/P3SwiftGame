@@ -16,14 +16,26 @@ class Game {
     var turnGame = 1
     
     init() {
-        player1 = Player(nameplayer: "JULES")
-        player2 = Player(nameplayer: "MAMAN")
+        player1 = Player(nameplayer: "")
+        player2 = Player(nameplayer: "")
     }
+    
+    
+    
+    
     // 1. Team
     func initGame() {
-        print("                           👾 Welcome to the game! 👾                 ")
+        print("                           👾 Welcome to the game! 👾                 " + "\n" + "\n")
+        //player 1 & player 2 se nomment
+        print("Joueur 1 : Rentre ton nom : ")
+        player1.namePlayer = readLine()!
+        print("Très bien, voici ton nom Joueur 1 : \(player1.namePlayer)" + "\n")
+        print("Joueur 2 à toi : ")
+        player2.namePlayer = readLine()!
+        
+        
         //le player 1 créer son équipe
-        print("------------------------- \(player1.namePlayer) ------------------------------------")
+        print("\n" + "------------------------- \(player1.namePlayer) ------------------------------------")
         print("Create your team \(player1.namePlayer):" + "\n")
         player1.createTeamCharacters()
         
@@ -34,11 +46,13 @@ class Game {
         
         print("-------------------------------------------------------------------------")
         print("                         Well, here are the teams : ")
-        print("-------------------------------------------------------------------------")
+        print("-------------------------------------------------------------------------" + "\n")
         // on affiche l'équipe du joueur 1
+        print("                     TEAM PLAYER 1: \(player1.namePlayer)")
                 player1.displayTeam()
-        print("-------------------------------------------------------------------------")
+        print("-------------------------------------------------------------------------" + "\n")
         // on affiche l'équipe du joueur 2
+        print("                     TEAM PLAYER 2: \(player2.namePlayer)")
                  player2.displayTeam()
         print("-------------------------------------------------------------------------" + "\n" + "\n")
     }

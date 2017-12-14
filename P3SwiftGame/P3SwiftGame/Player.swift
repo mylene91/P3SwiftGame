@@ -13,13 +13,16 @@ import Foundation
 class Player {
     // 1. The player creates a team of 3 characters
     var team = [Character]()
+    static var uniqueName = [String]()
     var namePlayer: String
     
     //initialisation de nameplayer
     init(nameplayer: String) {
         self.namePlayer = nameplayer
+        
     }
-    
+   
+   
     //fonction pour que l'utilisateur renvoie uniquement un nombre entier
     static func answerInt() -> Int {
         if let answer = readLine() {
@@ -77,33 +80,45 @@ class Player {
     
     // 1. Player: Choose his name (->string) : choisi un nom pour le personnage que tu viens de selectionner et renvoie uniquement un string
     func nameCharacter() -> String {
-        var validName = true
-        var chooseName = String()
+     
         
         //jusqu'à ce que la condition soit bonne fait ceci et retourne chooseName
-        repeat{
+   
             print("NAME IT :")
             // demande au joueur de donner un nom à son personnage qu'il vient de créer
-            if let name = readLine() {
+            let name = readLine()!
+                  let unNom = checkName(names: name)
+            
                 //si le nom contient bien un string alors affiche le dans un print et le booleen est true, choosename sera égal de nature String
-                if name != "" {
-                    //print le nom qu'il vient de choisir et il est
-                    print("Name:  \(name)." + "\n")
-                    validName = true
-                    chooseName = name
-                // sinon le validName est faux
-                } else {
-                    validName = false
-                    print("I don't understand, please try again." + "\n")
+                
+                if unNom == false {
+                    return nameCharacter()
+
                 }
-            } else {
-                validName = false
-                print("I don't understand, please try again." + "\n")
-            }
-        //stop la boucle
-        } while !validName
-        return chooseName
+                
+        // stop la boucle
+         return name
+
     } // end nameCharacter()
+    
+    // fonction
+    func checkName(names: String) -> Bool {
+        if names.count < 2 {
+            print("veuillez rentrer au moins deux caractères :")
+            return false
+        }
+        
+        for userNameArray in Player.uniqueName {
+                if userNameArray.lowercased() == names.lowercased() {
+                    print("Veuillez choisir un autre nom :")
+                    return false
+                }
+                
+        }
+        Player.uniqueName.append(names)
+        return true
+    }
+    
     
     // 1. Presentation Team
     func displayTeam() {
@@ -146,3 +161,6 @@ class Player {
     }
     
 } // end Player
+
+
+

@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Hands for Giant
+// Giant's hands
 class HandFight: Weapon {
     
     init() {

@@ -10,6 +10,7 @@ import Foundation
 
 var play = Game()
 play.initGame()
+play.fight()
 
 /*
 // create six characters
@@ -38,19 +39,19 @@ for characterLoosers in teamDeLoosers1 {
 for characterLoosers in teamDeLoosers2 {
     characterLoosers.presentation()
 }
-/*
  
 
 
-/*
-unMage.heal(target: unMage)
+
+unMage.heal(unMage)
 
 unNain.attack(target: unGeant)
 unNain.attack(target: unMage)
 
 
-unMage.heal(target: unGeant)
-unMage.heal(target: unGeant)
+unMage.heal(unGeant)
+unMage.heal(unGeant)
 */
 
- */*/
+ 
+ 

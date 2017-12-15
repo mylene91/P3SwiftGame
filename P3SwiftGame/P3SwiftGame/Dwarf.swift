@@ -12,17 +12,8 @@ import Foundation
 class Dwarf: Character {
     
     init(name: String){
-        super.init(typeclass: "Dwarf", name: name, weapon: Axe(), maxlife: 80)
+        super.init(typeclass: "Dwarf", name: name, weapon: Axe(), maxlife: 80, protectheal: false)
         self.life = 80
     }
-    
-    /*
-    override func attack(target: Character) {
-        let axe = Axe()
-        target.life -= axe.damage
-        print("\(target.name) has lose \(axe.damage) points of life: [\(target.life)/\(target.maxLife)]")
-    } // end attack()
-    */
-    
 
 } // end Dwarf

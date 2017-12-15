@@ -13,6 +13,7 @@ class Fighter: Character {
     
     init(name: String){
         super.init(typeclass: "Fighter", name: name, weapon: Sword(), maxlife: 100, protectheal: false)
+        self.life = 100
     }
 
     

@@ -12,7 +12,7 @@ import Foundation
 class HandFight: Weapon {
     
     init() {
-        super.init(name: "Big slap", damage: 100)
+        super.init(name: "Big slap", damage: 9)
     }
     
 } // end HandFight

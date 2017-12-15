@@ -12,7 +12,7 @@ import Foundation
 class Character {
     var typeClass: String
     var name: String
-    var life: Int = 100
+    var life: Int = 90
     let maxLife: Int
     var weapon: Weapon
     var protectHeal: Bool

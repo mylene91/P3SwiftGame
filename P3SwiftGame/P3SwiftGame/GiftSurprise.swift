@@ -16,10 +16,10 @@ class GiftSurprise: Weapon {
     
     //random damage between 20 and 25
     func damageRandom() -> Int {
-        return Int(arc4random_uniform(UInt32(+6))+20)
+        return Int(arc4random_uniform(UInt32(+6))+22)
     }
     
-    //random name
+    //radom de noms
     func randomName() -> String {
         let arrayNameRandom = ["Candle", "Saussage", "Cupcake", "Beer"]
         let newNameRandom = arrayNameRandom[Int(arc4random_uniform(UInt32(arrayNameRandom.count)))]
@@ -27,5 +27,3 @@ class GiftSurprise: Weapon {
     }
     
 }
-
-

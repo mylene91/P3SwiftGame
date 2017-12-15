@@ -12,7 +12,8 @@ import Foundation
 class Sword: Weapon {
     
     init() {
-        super.init(name: "Sword", damage: attackDamageRandom())     }
+        super.init(name: "Sword", damage: 90)//attackDamageRandom()) huge damages to test in Game()
+    }
     
     // Random damage between 10 and 15
     func attackDamageRandom() -> Int {

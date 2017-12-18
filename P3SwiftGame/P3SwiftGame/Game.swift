@@ -57,9 +57,12 @@ class Game {
             //print(chooseCharacter.name)
             print("\n")
             
-            //C'est ici que le coffre apparaît aléatoirement
+            /////C'est ici que le coffre apparaît aléatoirement
             chooseCharacter.giftWeapon()
-
+//            print("Oh ! Voici un Coffre ! 🎁 ")
+//            chooseCharacter.weapon = GiftSurprise()
+//            print("C'est une arme ! \(coffre().name) fait \(coffre().damage)" + "\n")
+            //remplacer l'arme du joueur selectionné par cette nouvelle arme :
             
             
             // s'il a choisi un character de classe mage alors il doit choisir un personnage de son équipe
@@ -92,7 +95,7 @@ class Game {
                             // on affiche la team du player 2
                             //print(player2.team)
                             // on affiche le nom du joueur qui est mort
-                            print("🎚\(theTarget.name) is dead🎚" + "\n")
+                            print("🎚\(theTarget.name) is dead🎚")
                             //on affiche son index
                             //print(index)
                             // .. -1 pour avoir un visu par rapport au tableau qui commence par 0
@@ -123,12 +126,7 @@ class Game {
             let winner = player1.namePlayer
             player1.team.removeAll()
             player2.team.removeAll()
-            print("👑👑👑👑👑👑👑👑👑👑👑")
-            print(" \(winner) has win!")
-            print("👑👑👑👑👑👑👑👑👑👑👑" + "\n")
-            print("Nombre de tours 🏁: \(turnGame)" + "\n")
-            print("                           👾 END 👾                 " + "\n")
-            
+            print("👑\(winner) has win!👑")
         }
     } // end if Winner()
 

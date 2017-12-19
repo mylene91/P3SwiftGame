@@ -27,7 +27,7 @@ class Character {
     }
     
     func attack(_ target: Character) {
-        // mettre un if ; si target a protectHeal: true alors weapon arme - 30
+        // If the Magus's shield is activated (true) then he absorbs 5 damage points
         if target.protectHeal == true {
             print("Ce personnage dispose d'un bouclier qui absorbe 5 pts de dégats")
             var damageOfWeapon = weapon.damage
@@ -47,14 +47,14 @@ class Character {
         return "Name: \(name)(\(self.typeClass)) - Life: [\(life)/\(maxLife)] -  Weapon: \(weapon.name) - protectHeal ? : \(protectHeal)."
     }
     
-    // random pour savoir si le personnage a le droit à un coffre contenant un GiftSurprise
+    // throw random to know if the character can have a chest containing a Giftsurprise
     func giftWeapon() {
         let giftOrNotGift = Int(arc4random_uniform(99))
         print(giftOrNotGift)
-        // 40% de chances d'avoir un coffre
+        // 40% chances to have a chest
         if giftOrNotGift < 40 {
             print("Oh ! Voici un Coffre ! 🎁 ")
-            // on attribue la nouvelle arme au personnage
+            // New weapon attributed to the character
             self.weapon = GiftSurprise()
             print("\(self.name) est maintenant équipé de \(self.weapon.name) qui inflige \(self.weapon.damage) dégâts")
         }

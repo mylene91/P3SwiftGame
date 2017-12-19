@@ -18,7 +18,7 @@ class Giant: Character {
     }
     
     override func attack(_ target: Character) {
-        // mettre un if ; si target a protectHeal: true alors weapon arme - 5
+        // If the giant has his lightningshield at 3 and the magus's protectheal is activated, damages get multiplied by 3 and the shield gets -5
         if self.lightningShield == 3 && target.protectHeal == true {
             print("⚡️⚡️⚡️\(self.name) a \(lightningShield)/3 charge(s) de bouclier de foudre⚡️⚡️⚡️")
             print("⚡️⚡️⚡️\(self.name) va consumer ses boucliers de foudre et faire 3x les dégats de son arme (\(weapon.damage))⚡️⚡️⚡️")
@@ -51,7 +51,7 @@ class Giant: Character {
             var damageOfWeapon = weapon.damage
             damageOfWeapon *= 3
             target.life -= damageOfWeapon
-            // verification print("\(target.name) has lose \(weapon.damage)*3 = \(damageOfWeapon) points of life: [\(target.life)/\(target.maxLife)]." + "\n")
+            // verification print("\(target.name) has lost \(weapon.damage)*3 = \(damageOfWeapon) points of life: [\(target.life)/\(target.maxLife)]." + "\n")
             print("\(target.name) has lost \(damageOfWeapon) points of life: [\(target.life)/\(target.maxLife)]." + "\n")
             
         } else {

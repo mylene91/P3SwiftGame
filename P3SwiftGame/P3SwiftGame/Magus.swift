@@ -15,13 +15,13 @@ class Magus: Character {
         super.init(typeclass: "Magus", name: name, weapon: MagicWand(), maxlife: 90, protectheal: false)
     }
     
-    // override la func attaque principale pour être sûr que le mage ne puisse attaquer et uniquement soigner
+    // override the principal attack function to be sure the magus can only heal without attacking
     override func attack(_ target: Character) {
         //let healTeam: Int = randomHeal()
         let healCharacter = randomHeal()
         target.life += healCharacter
         
-        // si la vie du personnage ciblé est supérieur à sa vie maximale alors le heal ne dépasse pas cette dernière valeur
+        // If the character's targeted is superior to his maximal life, then the heal life doesn't exceed that last value
         if target.life > target.maxLife {
             target.life = target.maxLife
             // print(target.life) verif ok
@@ -35,7 +35,7 @@ class Magus: Character {
         return Int(arc4random_uniform(UInt32(+15))+5)
     } // end randomHeal()
     
-    // le mage peut seulement heal on va donc lui proposer de heal aussi tous les membres de sa team de 5 points
+    // The magus can only heal, he get's asked to heal the other members of his team too from 5 points.
     override func giftWeapon() {
         let giftOrNotGift = Int(arc4random_uniform(99))
         print(giftOrNotGift)

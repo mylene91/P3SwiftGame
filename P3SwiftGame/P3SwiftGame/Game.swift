@@ -19,18 +19,15 @@ class Game {
         player1 = Player(nameplayer: "")
         player2 = Player(nameplayer: "")
     }
-    
-    
-    
-    
-    // 1. Team
+
+    // initilization & play the Game
     func initGame() {
         print("                           👾 Welcome to the game! 👾                 " + "\n" + "\n")
         //player 1 & player 2 se nomment
-        print("Joueur 1 : Rentre ton nom : ")
+        print("Player 1: Enter your name : ")
         player1.namePlayer = readLine()!
-        print("Très bien, voici ton nom Joueur 1 : \(player1.namePlayer)" + "\n")
-        print("Joueur 2 à toi : ")
+        print("Good, your name is: \(player1.namePlayer)" + "\n")
+        print("Player 2: Enter your name : ")
         player2.namePlayer = readLine()!
         
         
@@ -47,18 +44,18 @@ class Game {
         print("-------------------------------------------------------------------------")
         print("                         Well, here are the teams : ")
         print("-------------------------------------------------------------------------" + "\n")
-        // on affiche l'équipe du joueur 1
+        // display the team of player 1
         print("                     TEAM PLAYER 1: \(player1.namePlayer)")
                 player1.displayTeam()
         print("-------------------------------------------------------------------------" + "\n")
-        // on affiche l'équipe du joueur 2
+        // display the team of player 2
         print("                     TEAM PLAYER 2: \(player2.namePlayer)")
                  player2.displayTeam()
         print("-------------------------------------------------------------------------" + "\n" + "\n")
     }
     
     
-    // 2. Fight
+    // Fight
     func fight() {
         print("                          ⚔️ ⚔️ ⚔️ START A GAME!!! ⚔️ ⚔️ ⚔️                          " + "\n")
         // tant que l'équipe du player 2 n'est pas anéantie on fait jouer le player 1 contre le player 2
@@ -87,7 +84,7 @@ class Game {
                    
                     
                     
-                    // si c'est une autre classe que le mage, alors le personnage va choisir un personnage à attaquer dans l'équipe adverse
+                // si c'est une autre classe que le mage, alors le personnage va choisir un personnage à attaquer dans l'équipe adverse
                 } else {
                         print("---------------------------  \(player1.namePlayer) VS \(player2.namePlayer)  ----------------------------" + "\n")
                         print("CHOOSE A CHARACTER IN LA TEAM ADVERSE:")
@@ -103,14 +100,9 @@ class Game {
                         // si le personnage meurt et que sa vie passe en negatif alors sa vie passe à 0
                         if theTarget.life <= 0 {
                             theTarget.life = 0
-                            // on affiche la team du player 2
-                            //print(player2.team)
+                    
                             // on affiche le nom du joueur qui est mort
                             print("🎚\(theTarget.name) is dead🎚" + "\n")
-                            //on affiche son index
-                            //print(index)
-                            // .. -1 pour avoir un visu par rapport au tableau qui commence par 0
-                            //print(index - 1)
                             // on enlève ce personnage du tableau avec l'index
                             player2.team.remove(at: index)
                             // on affiche l'équipe du joueur 2 sans le personage qui est mort
@@ -124,6 +116,7 @@ class Game {
                         turnGame += 1
                     
                 } // end else
+            
             //inverser les joueurs pour que la partie se déroule à tour de rôle
             swap(&player2,&player1)
 
@@ -147,18 +140,6 @@ class Game {
     } // end if Winner()
 
 } // end Game()
-
-            
-            //IMPORTANT AS?
-//           if let superMagus = chooseCharacter as? Magus {
-//                    print("\(player1.namePlayer) select character to heal in your team")
-//                    for characters in player1.team {
-//                        print("\(characters.name) - \(characters.life)/\(characters.maxLife) select \(index)")
-//                        index += 1
-//
-//                }
-//
-//           superMagus.heal(player1.team[Player.answerInt()])
 
 
         

@@ -22,7 +22,6 @@ class Player {
         
     }
    
-   
     //Function so the user returns only a whole number
     static func answerInt() -> Int {
         if let answer = readLine() {
@@ -35,7 +34,7 @@ class Player {
     
     // Create a team of 3 characters (add array)
     func createTeamCharacters() {
-        //As long as the team doesn't count 3 characters, offer the player to 1. select a character 2. name it
+        // As long as the team doesn't count 3 characters, offer the player to 1. select a character 2. name it
         while team.count < 3 {
             print("Choose character :"
                 + "\n1. Fighter"
@@ -80,29 +79,18 @@ class Player {
     
     // function to name the character
     func nameCharacter() -> String {
-     
-        
-        
-   
             print("NAME IT :")
             // ask character's name
             let name = readLine()!
-                // Ask checkName to know if the name isn't in the array
-                  let unNom = checkName(names: name)
-            
-        
-                
+            // ask checkName to know if the name isn't in the array
+            let unNom = checkName(names: name)
                 if unNom == false {
                     return nameCharacter()
-
                 }
-                
-        // end the loop
          return name
-
     } // end nameCharacter()
     
-    // function
+    // function to check if name has correct
     func checkName(names: String) -> Bool {
         if names.count < 2 {
             print("please enter at least 2 characters :")
@@ -114,14 +102,13 @@ class Player {
                     print("please, choose another name :")
                     return false
                 }
-                
         }
         Player.uniqueName.append(names)
         return true
-    }
+    } // end checkName
     
     
-    // 1. Presentation Team
+    // Presentation Team
     func displayTeam() {
         var enterNumber = 1
         for character in team {
@@ -131,7 +118,7 @@ class Player {
     } // end displayTeam()
     
     
-    // 2. Select a character in order to fight the adverse team
+    // Select a character in order to fight the adverse team
     func selectCharacter() -> Character {
         // creation of a container to stock the character
         var characterToFight = Character(typeclass: "", name: "", weapon: Axe(), maxlife: 0, protectheal: false)
@@ -140,7 +127,7 @@ class Player {
          displayTeam()
         //the player enters a value
         let userChoice = Player.answerInt()
-        //recup valeur dans le switch on l'assigne pour l'équipe adverse
+        // recup valeur dans le switch on l'assigne pour l'équipe adverse
         switch userChoice {
         case 1:
             // I assign the character of the team in the container

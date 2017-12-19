@@ -18,7 +18,7 @@ class Magus: Character {
     // override la func attaque principale pour être sûr que le mage ne puisse attaquer et uniquement soigner
     override func attack(_ target: Character) {
         //let healTeam: Int = randomHeal()
-        let healCharacter = 120
+        let healCharacter = randomHeal()
         target.life += healCharacter
         
         // si la vie du personnage ciblé est supérieur à sa vie maximale alors le heal ne dépasse pas cette dernière valeur
@@ -31,17 +31,15 @@ class Magus: Character {
     } // end heal()
     
     
-    // use later
     func randomHeal() -> Int {
         return Int(arc4random_uniform(UInt32(+15))+5)
     } // end randomHeal()
     
-    // le mage peut seulement heal on va donc lui proposer de heal aussi tous les membes de sa team de 5 points
+    // le mage peut seulement heal on va donc lui proposer de heal aussi tous les membres de sa team de 5 points
     override func giftWeapon() {
         let giftOrNotGift = Int(arc4random_uniform(99))
         print(giftOrNotGift)
-        // 40% de chances d'avoir un coffre
-        if giftOrNotGift < 90 {
+        if giftOrNotGift < 40 {
             print("Oh ! Voici un Coffre ! 🎁 ")
             print("Le mage a un nouveau sort il pose un bouclier qui absorbe 5 pts de degats en plus de son heal.")
             protectHeal = true
@@ -50,8 +48,5 @@ class Magus: Character {
             
             }
     }
-    
-  
-    
     
 } // end Magus

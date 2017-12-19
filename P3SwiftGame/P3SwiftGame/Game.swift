@@ -67,11 +67,10 @@ class Game {
             var index = 0
             //print(chooseCharacter.name)
             print("\n")
-            
+
             //Here appears the chest randomly
             chooseCharacter.giftWeapon()
 
-            
             
             // If he has chosen a Magus character then he has to choose a character of his team
                 if chooseCharacter is Magus {
@@ -100,10 +99,12 @@ class Game {
                         // If the character dies and his lifepoints turns negative, then his life goes to 0 
                         if theTarget.life <= 0 {
                             theTarget.life = 0
+
                     
                             // Display the dead player's name
                             print("🎚\(theTarget.name) is dead🎚" + "\n")
                             // Remove the character from the board with the index
+
                             player2.team.remove(at: index)
                             // Display the player's 2 team without the dead character
                             player2.displayTeam()
@@ -130,12 +131,7 @@ class Game {
             let winner = player1.namePlayer
             player1.team.removeAll()
             player2.team.removeAll()
-            print("👑👑👑👑👑👑👑👑👑👑👑")
-            print(" \(winner) has win!")
-            print("👑👑👑👑👑👑👑👑👑👑👑" + "\n")
-            print("Nombre de tours 🏁: \(turnGame)" + "\n")
-            print("                           👾 END 👾                 " + "\n")
-            
+            print("👑\(winner) has win!👑")
         }
     } // end if Winner()
 

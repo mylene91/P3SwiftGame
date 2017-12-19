@@ -8,11 +8,11 @@
 
 import Foundation
 
-// Hands for Giant
+// Giant's hands
 class HandFight: Weapon {
     
     init() {
-        super.init(name: "Big slap", damage: 100)
+        super.init(name: "Big slap", damage: 9)
     }
     
 } // end HandFight

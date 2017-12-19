@@ -8,11 +8,11 @@
 
 import Foundation
 
-// Axe for Dwarf
+// Dwarf's axe
 class Axe: Weapon {
     
     init() {
-        super.init(name: "Axe", damage: 150)//attackDamageRandom()) big damages for testing in Game()
+        super.init(name: "Axe", damage: 20)//attackDamageRandom()) huge damages to test in Game()
     }
     
     // random damage between 15 and 20 

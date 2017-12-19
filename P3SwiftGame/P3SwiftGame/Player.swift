@@ -11,19 +11,19 @@ import Foundation
 
 // create player (totality: 2)
 class Player {
-    // 1. The player creates a team of 3 characters
+    // The player creates a team of 3 characters
     var team = [Character]()
     static var uniqueName = [String]()
     var namePlayer: String
     
-    //initialisation de nameplayer
+    //initialization of nameplayer
     init(nameplayer: String) {
         self.namePlayer = nameplayer
         
     }
    
    
-    //fonction pour que l'utilisateur renvoie uniquement un nombre entier
+    //Function so the user returns only a whole number
     static func answerInt() -> Int {
         if let answer = readLine() {
             if let reponseAnswer = Int(answer) {
@@ -33,9 +33,9 @@ class Player {
         return answerInt()
     } // end answerInt()
     
-    // 1. Create a team of 3 characters (add array)
+    // Create a team of 3 characters (add array)
     func createTeamCharacters() {
-        //tant que la team ne compte pas 3 personnages propose au joueur de 1. selectionner un personnage 2. le nommer
+        //As long as the team doesn't count 3 characters, offer the player to 1. select a character 2. name it
         while team.count < 3 {
             print("Choose character :"
                 + "\n1. Fighter"
@@ -51,25 +51,25 @@ class Player {
                     print("You have selected a Fighter" + "\n")
                     let name = nameCharacter()
                     character = Fighter(name: name)
-                    //ajoute au tableau team ton character
+                    //add the character to the array
                     team.append(character)
                 case "2":
                     print("You have selected a Magus" + "\n")
                     let name = nameCharacter()
                     character = Magus(name: name)
-                    //ajoute au tableau team ton character
+                    //add the character to the array
                     team.append(character)
                 case "3":
                     print("You have selected a Giant" + "\n")
                     let name = nameCharacter()
                     character = Giant(name: name)
-                    //ajoute au tableau team ton character
+                    //add the character to the array
                     team.append(character)
                 case "4":
                     print("You have selected a Dwarf" + "\n")
                     let name = nameCharacter()
                     character = Dwarf(name: name)
-                    //ajoute au tableau team ton character
+                    //add the character to the array
                     team.append(character)
                 default:
                     print("I don't understand, please try again.")
@@ -78,39 +78,40 @@ class Player {
         } // end while count
     } // end createTeamCharacters()
     
-    // 1. Player: Choose his name (->string) : choisi un nom pour le personnage que tu viens de selectionner et renvoie uniquement un string
+    // function to name the character
     func nameCharacter() -> String {
      
         
-        //jusqu'à ce que la condition soit bonne fait ceci et retourne chooseName
+        
    
             print("NAME IT :")
-            // demande au joueur de donner un nom à son personnage qu'il vient de créer
+            // ask character's name
             let name = readLine()!
+                // Ask checkName to know if the name isn't in the array
                   let unNom = checkName(names: name)
             
-                //si le nom contient bien un string alors affiche le dans un print et le booleen est true, choosename sera égal de nature String
+        
                 
                 if unNom == false {
                     return nameCharacter()
 
                 }
                 
-        // stop la boucle
+        // end the loop
          return name
 
     } // end nameCharacter()
     
-    // fonction
+    // function
     func checkName(names: String) -> Bool {
         if names.count < 2 {
-            print("veuillez rentrer au moins deux caractères :")
+            print("please enter at least 2 characters :")
             return false
         }
         
         for userNameArray in Player.uniqueName {
                 if userNameArray.lowercased() == names.lowercased() {
-                    print("Veuillez choisir un autre nom :")
+                    print("please, choose another name :")
                     return false
                 }
                 
@@ -132,17 +133,17 @@ class Player {
     
     // 2. Select a character in order to fight the adverse team
     func selectCharacter() -> Character {
-        // creation d'un container pour stocker le personnage
+        // creation of a container to stock the character
         var characterToFight = Character(typeclass: "", name: "", weapon: Axe(), maxlife: 0, protectheal: false)
         
-        //montrer les équipes pour faire un choix
+        //Show both teams to make a choice
          displayTeam()
-        //le joueur rentre une valeur
+        //the player enters a value
         let userChoice = Player.answerInt()
         //recup valeur dans le switch on l'assigne pour l'équipe adverse
         switch userChoice {
         case 1:
-            // j'assigne le character de l'équipe dans le container
+            // I assign the character of the team in the container
             characterToFight = team[0]
             print("You have chosen \(team[0].name)-\(team[0].typeClass) - [\(team[0].life)/\(team[0].maxLife)]!")
         case 2:
@@ -155,7 +156,7 @@ class Player {
         default:
             print("I don't understand, please try again.")
         }
-        // je renvoie le container(contenant le joueur selectionné)
+        // I return the container (having the selected player)
         return characterToFight
         
     }

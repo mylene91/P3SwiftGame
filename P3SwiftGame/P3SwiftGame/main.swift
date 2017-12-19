@@ -8,7 +8,10 @@
 
 import Foundation
 
+// start a game
 var play = Game()
+// initializarion player's
 play.initGame()
+// Players fight + display the winner
 play.fight()
 

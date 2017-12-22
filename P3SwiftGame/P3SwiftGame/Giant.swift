@@ -29,8 +29,6 @@ class Giant: Character {
             // enlever les 5 pts de protection du bouclier du heal
             damageOfWeapon -= 5
             target.life -= damageOfWeapon
-            
-            // verification print("\(target.name) has lose \(weapon.damage)*3 = \(damageOfWeapon) points of life: [\(target.life)/\(target.maxLife)]." + "\n")
             print("\(target.name) has lost \(damageOfWeapon) points of life (5 pts absorb): [\(target.life)/\(target.maxLife)]." + "\n")
             
         } else if target.protectHeal == true {
@@ -51,14 +49,12 @@ class Giant: Character {
             var damageOfWeapon = weapon.damage
             damageOfWeapon *= 3
             target.life -= damageOfWeapon
-            // verification print("\(target.name) has lost \(weapon.damage)*3 = \(damageOfWeapon) points of life: [\(target.life)/\(target.maxLife)]." + "\n")
             print("\(target.name) has lost \(damageOfWeapon) points of life: [\(target.life)/\(target.maxLife)]." + "\n")
             
         } else {
             let damageOfWeapon = weapon.damage
             print ("\(target.life)")
             target.life -= damageOfWeapon
-            
             print("\(target.name) has lost \(damageOfWeapon) points of life: [\(target.life)/\(target.maxLife)]." + "\n")
             //on rajoute une charge de bouclier de foudre
             lightningShield += 1

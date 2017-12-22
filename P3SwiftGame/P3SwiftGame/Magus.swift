@@ -17,7 +17,6 @@ class Magus: Character {
     
     // override the principal attack function to be sure the magus can only heal without attacking
     override func attack(_ target: Character) {
-        //let healTeam: Int = randomHeal()
         let healCharacter = randomHeal()
         target.life += healCharacter
         

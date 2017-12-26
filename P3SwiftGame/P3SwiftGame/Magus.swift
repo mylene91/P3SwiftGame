@@ -13,6 +13,7 @@ class Magus: Character {
     
     init(name: String){
         super.init(typeclass: "Magus", name: name, weapon: MagicWand(), maxlife: 90, protectheal: false)
+        self.life = 90
     }
     
     // override the principal attack function to be sure the magus can only heal without attacking

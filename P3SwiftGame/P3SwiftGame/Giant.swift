@@ -20,31 +20,29 @@ class Giant: Character {
     override func attack(_ target: Character) {
         // If the giant has his lightningshield at 3 and the magus's protectheal is activated, damages get multiplied by 3 and the shield gets -5
         if self.lightningShield == 3 && target.protectHeal == true {
-            print("⚡️⚡️⚡️\(self.name) a \(lightningShield)/3 charge(s) de bouclier de foudre⚡️⚡️⚡️")
-            print("⚡️⚡️⚡️\(self.name) va consumer ses boucliers de foudre et faire 3x les dégats de son arme (\(weapon.damage))⚡️⚡️⚡️")
-            // on remet le compteur à 0
+            print("⚡️⚡️⚡️\(self.name) has \(lightningShield)/3 charge(s) of lightning shield⚡️⚡️⚡️")
+            print("⚡️⚡️⚡️\(self.name) will burn his shield. His weapon will do 3x damage (\(weapon.damage))⚡️⚡️⚡️")
             lightningShield = 0
             var damageOfWeapon = weapon.damage
             damageOfWeapon *= 3
-            // enlever les 5 pts de protection du bouclier du heal
+            // remove the 5 points of protection of the shield of the mage
             damageOfWeapon -= 5
             target.life -= damageOfWeapon
             print("\(target.name) has lost \(damageOfWeapon) points of life (5 pts absorb): [\(target.life)/\(target.maxLife)]." + "\n")
             
         } else if target.protectHeal == true {
-            print("Ce personnage dispose d'un bouclier qui absorbe 5 pts de dégats")
+            print("This character has a shield that absorbs 5 pts of damage")
             var damageOfWeapon = weapon.damage
             damageOfWeapon -= 5
             target.life -= damageOfWeapon
-            //on rajoute une charge de bouclier de foudre
+            // we add a charge to the lightning shield
             lightningShield += 1
-            print("\(target.name) has lost \(damageOfWeapon) dont 5 points de degats absorbés: l'arme a fait \(weapon.damage)")
-            print("\(self.name) a \(lightningShield)/3 charge(s) de bouclier de foudre")
+            print("\(target.name) has lost \(damageOfWeapon) including  5 points of damage absorbed (The weapon did \(weapon.damage))")
+            print("\(self.name) has \(lightningShield)/3 charge(s) of active lightning shield")
             
         } else if self.lightningShield == 3 {
-            print("⚡️⚡️⚡️\(self.name) a \(lightningShield)/3 charge(s) de bouclier de foudre⚡️⚡️⚡️")
-            print("⚡️⚡️⚡️\(self.name) va consumer ses boucliers de foudre et faire 3x les dégats de son arme (\(weapon.damage))⚡️⚡️⚡️")
-            // on remet le compteur à 0
+            print("⚡️⚡️⚡️\(self.name) has \(lightningShield)/3 charge(s) of lightning shield⚡️⚡️⚡️")
+            print("⚡️⚡️⚡️\(self.name) will burn his shield. His weapon will do 3x damage (\(weapon.damage))⚡️⚡️⚡️")
             lightningShield = 0
             var damageOfWeapon = weapon.damage
             damageOfWeapon *= 3
@@ -56,9 +54,9 @@ class Giant: Character {
             print ("\(target.life)")
             target.life -= damageOfWeapon
             print("\(target.name) has lost \(damageOfWeapon) points of life: [\(target.life)/\(target.maxLife)]." + "\n")
-            //on rajoute une charge de bouclier de foudre
+            // we add a charge to the lightning shield
             lightningShield += 1
-            print("\(self.name) a \(lightningShield)/3 charge(s) de bouclier de foudre" + "\n")
+            print("\(self.name) has \(lightningShield)/3 charge(s) of lightning shield" + "\n")
         }
         
     } // end attack()

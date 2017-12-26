@@ -23,7 +23,6 @@ class Magus: Character {
         // If the character's targeted is superior to his maximal life, then the heal life doesn't exceed that last value
         if target.life > target.maxLife {
             target.life = target.maxLife
-            // print(target.life) verif ok
         }
         print("\(name) heals \(target.name) for +\(healCharacter) lifepoints. NOW : \(target.name)(\(target.typeClass)) have [\(target.life)/\(target.maxLife)] lifepoints." + "\n")
 
@@ -39,11 +38,11 @@ class Magus: Character {
         let giftOrNotGift = Int(arc4random_uniform(99))
         print(giftOrNotGift)
         if giftOrNotGift < 40 {
-            print("Oh ! Voici un Coffre ! 🎁 ")
-            print("Le mage a un nouveau sort il pose un bouclier qui absorbe 5 pts de degats en plus de son heal.")
+            print("Oh! Here is a gift box! ! 🎁 ")
+            print("The mage has a new spell: he now has a shield that absorbs 5 damage points.")
             protectHeal = true
             print(self.protectHeal)
-            print("Ton mage \(self.name) a maintenant un bouclier qui absorbe 5 pts de dégats !" + "\n")
+            print("Your Magus \(self.name) now has a shield that absorbs 5 damage." + "\n")
             
             }
     }

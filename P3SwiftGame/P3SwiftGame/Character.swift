@@ -29,15 +29,15 @@ class Character {
     func attack(_ target: Character) {
         // If the Magus's shield is activated (true) then he absorbs 5 damage points
         if target.protectHeal == true {
-            print("Ce personnage dispose d'un bouclier qui absorbe 5 pts de dégats")
+            print("This character has a shield that absorbs 5 pts of damage")
             var damageOfWeapon = weapon.damage
             damageOfWeapon -= 5
             target.life -= damageOfWeapon
-            print("\(target.name) has loose \(damageOfWeapon) dont 5 points de degats absorbés: l'arme a fait \(weapon.damage)")
+            print("\(target.name) has lost \(damageOfWeapon) including  5 points of damage absorbed (The weapon did \(weapon.damage)")
         } else {
             let damage = weapon.damage
             target.life -= damage
-            print("\(target.name) has lose \(weapon.damage) points of life: [\(target.life)/\(target.maxLife)]." + "\n")
+            print("\(target.name) has lost \(weapon.damage) points of life: [\(target.life)/\(target.maxLife)]." + "\n")
         }
         
     } // end attack()
@@ -51,12 +51,12 @@ class Character {
     func giftWeapon() {
         let giftOrNotGift = Int(arc4random_uniform(99))
         print(giftOrNotGift)
-        // 40% chances to have a chest
+        // 40% chances to have a gift box
         if giftOrNotGift < 40 {
-            print("Oh ! Voici un Coffre ! 🎁 ")
+            print("Oh! Here is a gift box! 🎁 ")
             // New weapon attributed to the character
             self.weapon = GiftSurprise()
-            print("\(self.name) est maintenant équipé de \(self.weapon.name) qui inflige \(self.weapon.damage) dégâts")
+            print("\(self.name) it's now equipped with \(self.weapon.name) that inflicts\(self.weapon.damage) damage")
         }
     }
 

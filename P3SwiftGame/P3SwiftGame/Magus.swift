@@ -37,7 +37,6 @@ class Magus: Character {
     // The magus can only heal, he get's asked to heal the other members of his team too from 5 points.
     override func giftWeapon() {
         let giftOrNotGift = Int(arc4random_uniform(99))
-        print(giftOrNotGift)
         if giftOrNotGift < 40 {
             print("Oh! Here is a gift box! ! 🎁 ")
             print("The mage has a new spell: he now has a shield that absorbs 5 damage points.")

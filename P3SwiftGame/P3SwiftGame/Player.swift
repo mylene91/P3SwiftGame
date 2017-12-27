@@ -36,7 +36,7 @@ class Player {
     func createTeamCharacters() {
         // As long as the team doesn't count 3 characters, offer the player to 1. select a character 2. name it
         while team.count < 3 {
-            print("Choose character :"
+            print("\nChoose character :"
                 + "\n1. Fighter"
                 + "\n2. Magus"
                 + "\n3. Giant"

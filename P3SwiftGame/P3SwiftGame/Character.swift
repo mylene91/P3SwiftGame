@@ -50,13 +50,12 @@ class Character {
     // throw random to know if the character can have a chest containing a Giftsurprise
     func giftWeapon() {
         let giftOrNotGift = Int(arc4random_uniform(99))
-        print(giftOrNotGift)
         // 40% chances to have a gift box
         if giftOrNotGift < 40 {
             print("Oh! Here is a gift box! 🎁 ")
             // New weapon attributed to the character
             self.weapon = GiftSurprise()
-            print("\(self.name) it's now equipped with \(self.weapon.name) that inflicts\(self.weapon.damage) damage")
+            print("\(self.name) it's now equipped with \(self.weapon.name) that inflicts \(self.weapon.damage) damage")
         }
     }
 

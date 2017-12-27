@@ -46,6 +46,8 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
+P3SwiftGame.xcodeproj/project.xcworkspace/xcuserdata/Mylene-Pro.xcuserdatad/UserInterfaceState.xcuserstate
+
 
 ## Other
 *.moved-aside

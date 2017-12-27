@@ -16,19 +16,19 @@ class Game {
     var turnGame = 1
     
     init() {
-        player1 = Player(nameplayer: "")
-        player2 = Player(nameplayer: "")
+        player1 = Player(nameplayer: "PLAYER 1")
+        player2 = Player(nameplayer: "PLAYER 2")
     }
 
     // Initilization & play the game
     func initGame() {
         print("                           👾 Welcome to the game! 👾                 " + "\n" + "\n")
-        //player 1 & player 2 name themselves
-        print("Player 1: Enter your name : ")
-        player1.namePlayer = readLine()!
-        print("Good, your name is: \(player1.namePlayer)" + "\n")
-        print("Player 2: Enter your name : ")
-        player2.namePlayer = readLine()!
+//        //player 1 & player 2 name themselves
+//        print("Player 1: Enter your name : ")
+//        player1.namePlayer = readLine()!
+//        print("Good, your name is: \(player1.namePlayer)" + "\n")
+//        print("Player 2: Enter your name : ")
+//        player2.namePlayer = readLine()!
         
         
         // Player 1 creates a team
@@ -107,11 +107,23 @@ class Game {
                             player2.team.remove(at: index)
                             // Display the player's 2 team without the dead character
                             player2.displayTeam()
-                            //print(player2.team)
                             
-                            ifWinner()
+                            
+                            //ifWinner()
                          
                         } // end theTarget
+                    
+                    if player2.team.isEmpty{
+                        let winner = player1.namePlayer
+                        player1.team.removeAll()
+                        player2.team.removeAll()
+                        print("👑👑👑👑👑👑👑👑👑👑👑")
+                        print(" \(winner) has win!")
+                        print("👑👑👑👑👑👑👑👑👑👑👑" + "\n")
+                        print("Nombre de tours 🏁: \(turnGame)" + "\n")
+                        print("                           👾 END 👾                 " + "\n")
+                        
+                    }
      
                         turnGame += 1
                     
@@ -125,19 +137,20 @@ class Game {
     
 
     //Check if the player's 2 board is empty + erase both boards + display the winner
-    func ifWinner() {
-        if player2.team.isEmpty{
-            let winner = player1.namePlayer
-            player1.team.removeAll()
-            player2.team.removeAll()
-            print("👑👑👑👑👑👑👑👑👑👑👑")
-            print(" \(winner) has win!")
-            print("👑👑👑👑👑👑👑👑👑👑👑" + "\n")
-            print("Nombre de tours 🏁: \(turnGame)" + "\n")
-            print("                           👾 END 👾                 " + "\n")
-            
-        }
-    } // end if Winner()
+    
+//    func ifWinner() {
+//        if player2.team.isEmpty{
+//            let winner = player1.namePlayer
+//            player1.team.removeAll()
+//            player2.team.removeAll()
+//            print("👑👑👑👑👑👑👑👑👑👑👑")
+//            print(" \(winner) has win!")
+//            print("👑👑👑👑👑👑👑👑👑👑👑" + "\n")
+//            print("Nombre de tours 🏁: \(turnGame)" + "\n")
+//            print("                           👾 END 👾                 " + "\n")
+//
+//        }
+//    } // end if Winner()
 
 } // end Game()
 

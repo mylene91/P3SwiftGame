@@ -38,10 +38,9 @@ class Magus: Character {
     override func giftWeapon() {
         let giftOrNotGift = Int(arc4random_uniform(99))
         if giftOrNotGift < 40 {
-            print("Oh! Here is a gift box! ! 🎁 ")
+            print("Oh! Here is a gift box! 🎁 ")
             print("The mage has a new spell: he now has a shield that absorbs 5 damage points.")
             protectHeal = true
-            print(self.protectHeal)
             print("Your Magus \(self.name) now has a shield that absorbs 5 damage." + "\n")
             
             }

@@ -60,7 +60,6 @@ class Game {
             // Player 1 chooses a character to attack
             let chooseCharacter = attacking.selectCharacter()
             var index = 0
-            //print(chooseCharacter.name)
             print("\n")
 
             //Here appears the chest randomly
@@ -80,7 +79,7 @@ class Game {
                     
                 // If this is another class than Magus, then the character has to choose a character to attack in the adverse teams
                 } else {
-                        print("---------------------------  \(player1.namePlayer) VS \(defending.namePlayer)  ----------------------------" + "\n")
+                        print("---------------------------  \(attacking.namePlayer) VS \(defending.namePlayer)  ----------------------------" + "\n")
                         print("CHOOSE A CHARACTER IN LA TEAM ADVERSE:")
                         // Display player's 2 team
                         defending.displayTeam()
@@ -94,23 +93,16 @@ class Game {
                         // If the character dies and his lifepoints turns negative, then his life goes to 0 
                         if theTarget.life <= 0 {
                             theTarget.life = 0
-
-                    
                             // Display the dead player's name
                             print("🎚\(theTarget.name) is dead🎚" + "\n")
                             // Remove the character from the board with the index
                             defending.team.remove(at: index)
-
                             // Display the player's 2 team without the dead character
                             defending.displayTeam()
-                            
-                            
-                            //ifWinner()
-                         
-                        } // end theTarget
+                        } // end if theTarget
                     
                     //Check if the player's 2 board is empty + erase both boards + display the winner
-                    if defending.team.isEmpty{
+                    if defending.team.isEmpty {
                         let winner = attacking.namePlayer
                         attacking.team.removeAll()
                         defending.team.removeAll()

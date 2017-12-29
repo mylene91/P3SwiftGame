@@ -127,7 +127,7 @@ class Player {
          displayTeam()
         //the player enters a value
         let userChoice = Player.answerInt()
-        // recup valeur dans le switch on l'assigne pour l'équipe adverse
+        // We recover the value
         switch userChoice {
         case 1:
             // I assign the character of the team in the container

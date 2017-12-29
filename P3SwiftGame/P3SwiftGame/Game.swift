@@ -80,7 +80,7 @@ class Game {
                     
                 // If this is another class than Magus, then the character has to choose a character to attack in the adverse teams
                 } else {
-                        print("---------------------------  \(player1.namePlayer) VS \(defending.namePlayer)  ----------------------------" + "\n")
+                        print("---------------------------  \(attacking.namePlayer) VS \(defending.namePlayer)  ----------------------------" + "\n")
                         print("CHOOSE A CHARACTER IN LA TEAM ADVERSE:")
                         // Display player's 2 team
                         defending.displayTeam()

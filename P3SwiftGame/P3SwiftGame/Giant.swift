@@ -50,7 +50,6 @@ class Giant: Character {
             
         } else {
             let damageOfWeapon = weapon.damage
-            print ("\(target.life)")
             target.life -= damageOfWeapon
             print("\(target.name) has lost \(damageOfWeapon) points of life: [\(target.life)/\(target.maxLife)]." + "\n")
             // we add a charge to the lightning shield
